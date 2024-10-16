@@ -1,0 +1,289 @@
+body {
+    background-color: antiquewhite;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    text-align: center;
+    cursor: default;
+}
+
+h5 {
+    text-align: center;
+    cursor: default;
+}
+
+@keyframes instaText {
+    0% {color: rgb(131, 58, 180)}
+    25% {color: rgb(193, 53, 132)}
+    50% {color: rgb(225, 48, 108)}
+    75% {color: rgb(88, 81, 219)}
+    100% {color: rgb(131, 58, 180)}
+}
+
+@keyframes githubText {
+    0% {color: white}
+    50% {color: rgb(81, 80, 80)}
+    100% {color: white}
+}
+
+@keyframes linkedinText {
+    0% {color: white}
+    50% {color: rgb(10, 102, 194)}
+    100% {color: white}
+}
+
+
+#insta {
+    animation: instaText 4s infinite;
+    transition: transform 0.3s; 
+}
+
+#github {
+    animation: githubText 4s infinite;
+    transition: transform 0.3s; 
+}
+
+#linkedin {
+    animation: linkedinText 4s infinite;
+    transition: transform 0.3s; 
+}
+
+#insta i:hover, #linkedin i:hover, #github i:hover {
+    transform: scale(1.2);
+}
+
+#num2Box:hover {
+    background-color: rgba(128, 128, 128, 0.312);
+}
+
+#num1Box:hover {
+    background-color: rgba(128, 128, 128, 0.312);
+}
+
+#addition-button {
+    padding: 20px;
+    border-radius: 15px;
+    border-color: black;
+    background-color: bisque;
+    color: black;
+}
+
+#addition-button:hover {
+    cursor: pointer;
+    animation: fa-bounce 1s;
+}
+
+#subtraction-button {
+    padding: 20px;
+    border-radius: 15px;
+    border-color: black;
+    background-color: bisque;
+    color: black;
+}
+
+#subtraction-button:hover {
+    cursor: pointer;
+    animation: fa-bounce 1s;
+}
+
+#multiplication-button {
+    padding: 20px;
+    border-radius: 15px;
+    border-color: black;
+    background-color: bisque;
+    color: black;
+}
+
+#multiplication-button:hover {
+    cursor: pointer;
+    animation: fa-bounce 1s;
+}
+
+#division-button {
+    padding: 20px;
+    border-radius: 15px;
+    border-color: black;
+    background-color: bisque;
+    color: black;
+}
+
+#division-button:hover {
+    cursor: pointer;
+    animation: fa-bounce 1s;
+}
+
+/* for mobile phones */
+@media only screen and (max-width: 640px){
+    
+    .container {
+        display: flex;
+        gap: 20px;
+        justify-content: center;
+        align-items: center;
+        border-radius: 15px;
+        border-color: black;
+        border-style: dashed;
+        margin-top: 100px;
+        width: 250px;
+        height: 200px;
+        margin-left: 20px;
+    }
+
+    #num1Box {
+        width: 80px;
+        /* border-top: none; */
+        border-left: none;
+        border-right: none;
+        background-color: antiquewhite;
+        transition: transform 0.3s ease-in-out;
+    }
+    
+    #num1Box:focus {
+        border-top: none;
+        border-left: none;
+        border-right: none;
+        transform: scale(1.2);
+    }
+
+    #num2Box {
+        width: 80px;
+        /* border-top: none; */
+        border-left: none;
+        border-right: none;
+        background-color: antiquewhite;
+        transition: transform 0.3s ease-in-out;
+    }
+
+    #num2Box:focus {
+        transform: scale(1.2);
+    }
+
+    .Control-panel {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 15px;
+        margin-top: 50px;
+    }
+
+}
+
+/* for tablets and small desktops */
+@media only screen and (min-width: 768px) {
+
+    .container {
+        display: flex;
+        gap: 20px;
+        justify-content: center;
+        align-items: center;
+        border-radius: 15px;
+        border-color: black;
+        border-style: dashed;
+        margin-top: 100px;
+        width: 250px;
+        height: 200px;
+        margin-left: 20px;
+    }
+
+    #num1Box {
+        width: 80px;
+        /* border-top: none; */
+        border-left: none;
+        border-right: none;
+        background-color: antiquewhite;
+        transition: transform 0.3s ease-in-out;
+    }
+    
+    #num1Box:focus {
+        border-top: none;
+        border-left: none;
+        border-right: none;
+        transform: scale(1.2);
+    }
+
+    #num2Box {
+        width: 80px;
+        /* border-top: none; */
+        border-left: none;
+        border-right: none;
+        background-color: antiquewhite;
+        transition: transform 0.3s ease-in-out;
+    }
+
+    #num2Box:focus {
+        transform: scale(1.2);
+    }
+
+    .Control-panel {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 15px;
+        margin-top: 50px;
+    }
+
+
+}
+
+/* for desktop or laptops */
+@media only screen and (min-width: 1024px){
+
+    /* hr {
+        width: 1000px;
+    }  */
+
+    .container {
+        display: flex;
+        gap: 50px;
+        justify-content: center;
+        align-items: center;
+        border-radius: 15px;
+        border-color: black;
+        border-style: dashed;
+        width: 500px;
+        height: 300px;
+        margin-left: 500px;
+        margin-top: 80px;
+    }
+
+    #num1Box {
+        /* border-top: none; */
+        border-left: none;
+        border-right: none;
+        background-color: antiquewhite;
+        transition: transform 0.3s ease-in-out;
+    }
+
+    #num1Box:focus {
+        border-top: none;
+        border-left: none;
+        border-right: none;
+        transform: scale(1.2);
+    }
+
+
+    #num2Box {
+        /* border-top: none; */
+        border-left: none;
+        border-right: none;
+        background-color: antiquewhite;
+        transition: transform 0.3s ease-in-out;
+    }
+
+    #num2Box:focus {
+        transform: scale(1.2);
+    }
+
+    .Control-panel {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 15px;
+        margin-top: 50px;
+    }
+
+}
+
