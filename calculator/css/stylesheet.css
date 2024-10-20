@@ -1,5 +1,5 @@
 body {
-    background-color: antiquewhite;
+    background-color: bisque;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     margin: 0;
     padding: 0;
@@ -35,6 +35,14 @@ h5 {
     100% {color: white}
 }
 
+.header-links {
+    color: black;
+}
+
+.header-links:hover {
+    background-color: rgba(72, 72, 72, 0.385);
+    border-radius: 8px;
+}
 
 #insta {
     animation: instaText 4s infinite;
@@ -55,19 +63,26 @@ h5 {
     transform: scale(1.2);
 }
 
+#num3Box:hover {
+    background-color: rgba(128, 128, 128, 0.312);
+    cursor: default;
+}
+
 #num2Box:hover {
     background-color: rgba(128, 128, 128, 0.312);
+    cursor: default;
 }
 
 #num1Box:hover {
     background-color: rgba(128, 128, 128, 0.312);
+    cursor: default;
 }
 
 #addition-button {
     padding: 20px;
     border-radius: 15px;
     border-color: black;
-    background-color: bisque;
+    background-color: antiquewhite;
     color: black;
 }
 
@@ -80,7 +95,7 @@ h5 {
     padding: 20px;
     border-radius: 15px;
     border-color: black;
-    background-color: bisque;
+    background-color: antiquewhite;
     color: black;
 }
 
@@ -93,7 +108,7 @@ h5 {
     padding: 20px;
     border-radius: 15px;
     border-color: black;
-    background-color: bisque;
+    background-color: antiquewhite;
     color: black;
 }
 
@@ -106,13 +121,46 @@ h5 {
     padding: 20px;
     border-radius: 15px;
     border-color: black;
-    background-color: bisque;
+    background-color: antiquewhite;
     color: black;
 }
 
 #division-button:hover {
     cursor: pointer;
     animation: fa-bounce 1s;
+}
+
+nav {
+    display: flex;
+    margin-left: 20px; 
+    gap: 15px;
+}
+
+#tp-button {
+    color: black;
+    background-color: antiquewhite;
+    border-color: black;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+#tp-button:hover {
+    background-color: rgba(136, 119, 98, 0.61);
+}
+
+.control-panel-buttons {
+    padding: 20px;
+    border-radius: 15px;
+    border-color: black;
+    background-color: antiquewhite;
+    color: black;
+    transition: transform 0.3s;
+    margin-bottom: 40px;
+}
+
+.control-panel-buttons:hover {
+    transform: scale(1.1);
+    cursor: pointer;
 }
 
 /* for mobile phones */
@@ -123,18 +171,20 @@ h5 {
         gap: 20px;
         justify-content: center;
         align-items: center;
+        background-color: antiquewhite;
         border-radius: 15px;
         border-color: black;
         border-style: dashed;
         margin-top: 100px;
+        text-align: center;
         width: 250px;
         height: 200px;
-        margin-left: 20px;
+        margin-left: 80px;
     }
 
     #num1Box {
         width: 80px;
-        /* border-top: none; */
+        border-top: none;
         border-left: none;
         border-right: none;
         background-color: antiquewhite;
@@ -150,7 +200,7 @@ h5 {
 
     #num2Box {
         width: 80px;
-        /* border-top: none; */
+        border-top: none;
         border-left: none;
         border-right: none;
         background-color: antiquewhite;
@@ -158,6 +208,18 @@ h5 {
     }
 
     #num2Box:focus {
+        transform: scale(1.2);
+    }
+
+    #num3Box {
+        border-top: none;
+        border-left: none;
+        border-right: none;
+        background-color: antiquewhite;
+        transition: transform 0.3s ease-in-out;
+    }
+
+    #num3Box:focus {
         transform: scale(1.2);
     }
 
@@ -179,18 +241,20 @@ h5 {
         gap: 20px;
         justify-content: center;
         align-items: center;
+        background-color: antiquewhite;
         border-radius: 15px;
         border-color: black;
         border-style: dashed;
         margin-top: 100px;
+        text-align: center;
         width: 250px;
         height: 200px;
-        margin-left: 20px;
+        margin-left: 270px;
     }
 
     #num1Box {
         width: 80px;
-        /* border-top: none; */
+        border-top: none;
         border-left: none;
         border-right: none;
         background-color: antiquewhite;
@@ -206,14 +270,27 @@ h5 {
 
     #num2Box {
         width: 80px;
-        /* border-top: none; */
+        border-top: none;
+        border-left: none;
+        border-right: none;
+        background-color: rgba(250, 235, 215, 0);
+        transition: transform 0.3s ease-in-out;
+    }
+
+    #num2Box:focus {
+        transform: scale(1.2);
+    }
+
+    #num3Box {
+        width: 80px;
+        border-top: none;
         border-left: none;
         border-right: none;
         background-color: antiquewhite;
         transition: transform 0.3s ease-in-out;
     }
 
-    #num2Box:focus {
+    #num3Box:focus {
         transform: scale(1.2);
     }
 
@@ -231,15 +308,12 @@ h5 {
 /* for desktop or laptops */
 @media only screen and (min-width: 1024px){
 
-    /* hr {
-        width: 1000px;
-    }  */
-
     .container {
         display: flex;
         gap: 50px;
         justify-content: center;
         align-items: center;
+        background-color: antiquewhite;
         border-radius: 15px;
         border-color: black;
         border-style: dashed;
@@ -250,10 +324,10 @@ h5 {
     }
 
     #num1Box {
-        /* border-top: none; */
+        border-top: none;
         border-left: none;
         border-right: none;
-        background-color: antiquewhite;
+        background-color: rgba(250, 235, 215, 0);
         transition: transform 0.3s ease-in-out;
     }
 
@@ -266,14 +340,26 @@ h5 {
 
 
     #num2Box {
-        /* border-top: none; */
+        border-top: none;
         border-left: none;
         border-right: none;
-        background-color: antiquewhite;
+        background-color: rgba(250, 235, 215, 0);
         transition: transform 0.3s ease-in-out;
     }
 
     #num2Box:focus {
+        transform: scale(1.2);
+    }
+
+    #num3Box {
+        border-top: none;
+        border-left: none;
+        border-right: none;
+        background-color: rgba(250, 235, 215, 0);
+        transition: transform 0.3s ease-in-out;
+    }
+
+    #num3Box:focus {
         transform: scale(1.2);
     }
 
@@ -285,5 +371,41 @@ h5 {
         margin-top: 50px;
     }
 
+    .pas-tp-container {
+        background-color: antiquewhite;
+        display: grid;
+        justify-content: center;
+        align-items: center;
+        border-width: 10px;
+        border-color: black;
+        border-radius: 8px;
+        margin-left: 30px;
+        padding: 20px;
+        width: 50%;
+        box-shadow: 0px 1px 10px grey;
+    }
+
+    #tp-button {
+        margin-left: 45vh;
+        padding: 10px;
+    }
+
+    .form-answer {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: antiquewhite;
+        padding: 35px;
+        border-color: black;
+        border-radius: 15px;
+        border-style: dashed;
+    }
+
+    .parent-form {
+        display: flex;
+        justify-content: space-evenly;
+        margin-top: 3vh;
+    }
 }
+
 

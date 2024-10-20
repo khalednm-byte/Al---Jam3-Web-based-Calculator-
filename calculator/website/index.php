@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/stylesheet.css">
+    <link rel="stylesheet" href="../css/stylesheet.css?v=1.1">
     <script src="https://kit.fontawesome.com/d7b796c30b.js" crossorigin="anonymous"></script>
     <link rel="icon" type="image/x-icon" href="../assets/favicon.ico">
     <title>Calculator - KHALED</title>
@@ -12,25 +12,28 @@
 
     <header>
         <h1>
-            <i class="fa-solid fa-calculator"></i> 
-            <strong>Al - Jam3</strong>
+            <i class="fa-solid fa-calculator"> Al - Jam3</i> 
         </h1>
+        <nav id="header-nav" style="display: flex; margin-left: 20px; gap: 15px;">
+            <a href="../website/index.php" class="header-links" style="text-decoration: none;"><i class="fa-solid fa-plus-minus"> Basic Arithmetics</i></a>
+            <a href="../website/pas.php" class="header-links"><i class="fa-solid fa-brain"> Probability and Statistics</i></a>
+            <a href=""></a>
+        </nav>
     </header>
-    
-    
+
     <hr>
     <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="get">
         <div class="container">
 
             <div class="col-1">
                 <label for="num1Box">
-                    <input type="number" name="num1" id="num1Box" placeholder="0">
+                    <input type="text" name="num1" id="num1Box" placeholder="0">
                 </label>
             </div>
             
             <div class="col-2">
                 <label for="num2Box">
-                    <input type="number" name="num2" id="num2Box" placeholder="0">
+                    <input type="text" name="num2" id="num2Box" placeholder="0">
                 </label>
             </div>
             
@@ -55,7 +58,7 @@
     <?php
         $num1 = filter_input(INPUT_GET, "num1", FILTER_SANITIZE_NUMBER_FLOAT, FILTER_FLAG_ALLOW_FRACTION);
         $num2 = filter_input(INPUT_GET, "num2", FILTER_SANITIZE_NUMBER_FLOAT, FILTER_FLAG_ALLOW_FRACTION);
-        $operation = filter_input(INPUT_GET, "operation", FILTER_SANITIZE_STRING);
+        $operation = filter_input(INPUT_GET, "operation", FILTER_SANITIZE_FULL_SPECIAL_CHARS);
 
         $result = "N/A";
 
@@ -81,13 +84,21 @@
                     $result = "Invalid operation";
                     break;
             }
-        }else if ($num1 == null || $num2 == null) {
+        }else if ($operation !== null && ($num1 == null || $num2 == null)) {
             $result = "Insert at least Two Numbers";
+        }else if ($operation == null && ($num1 == null || $num2 == null)) {
+            $result = "N/A" ;
         }else {
-            return;
+            $result = "Something went wrong...";
         }
 
-        echo "<p class='container'>Result: " . htmlspecialchars($result) . "</p>";
+        if ($result == "Insert at least Two Numbers" || $result == "Something went wrong...") {
+            echo "<p class='container' style='color: red;'> " . htmlspecialchars($result) . "</p>";
+        }else {
+            echo "<p class='container'>Result: " . htmlspecialchars($result) . "</p>";
+        }
+
+        
     ?>
     
     <div style="background-color: black; margin: 0; padding: 0; left: 0; bottom: 0; width: 100%;">
